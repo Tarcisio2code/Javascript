@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+	<meta charset="utf-8">
+	<title>Requisições AJAX com jQuery</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<p>
+	<a id="lnk" href="javascript:void(0);" >Executar a requisição AJAX</a>	
+</p>
+<script type="text/javascript">
+	$('#lnk').click(function(){
+		
+		_ _ _ _ _("sanasa.php", function(data, status){
+			console.log("Retorno: " + data + "\nStatus: " + status);
+		});
+		
+	});
+</script>
+</body>
+</html>

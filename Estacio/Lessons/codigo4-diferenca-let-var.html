@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Diferença entre let e var</title>
+
+<script type="text/javascript">
+
+/** Utilizando var **/
+
+var msgGlobal = "Conteúdo da variável global msgGlobal";
+
+if(true){
+	var msgBloco = "Conteúdo da variável global msgBloco";
+	//Mesmo dentro de um bloco será possível acessar a variável global msgGlobal
+	console.log(msgGlobal); 
+}
+
+//Mesmo fora do bloco onde foi definida, será possível acessar a variável global msgBloco
+console.log(msgBloco); 
+
+
+/** Utilizando let **/
+
+if(true){
+	let msgBloco2 = "Conteúdo da variável global msgBloco2";
+	//Conseguirá acessar a variável msgBloco2, pois está no mesmo escopo
+	console.log(msgBloco2); 
+}
+
+//Não conseguirá acessar a variável msgBloco2, pois esta pertence ao escopo da instrução if onde foi declarada
+console.log(msgBloco2); 
+
+
+</script>
+
+</head>
+<body>
+	<!-- Códigos HTML -->
+</body>
+</html>
