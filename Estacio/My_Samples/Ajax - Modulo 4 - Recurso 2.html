@@ -1,0 +1,31 @@
+<!-- 
+    Ajax request sample
+    Created on Tue May 18 00:33:25 2021
+    @author: Tarcisio
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>AJAX Request with jQuery</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>    
+    </head>
+    <body>
+        <p>
+            <a id="lnk" href="javascript:void(0);">Start AJAX request</a>
+        </p>
+        <div id="result"></div>
+        <script type="text/javascript">
+            $('#lnk').click(function () {
+                $.get("https://reqres.in/api/users", function(data, status){
+                    $("#result").html("Loading...");
+                    $("#result").html("");
+                    $("#result").html(JSON.stringify(data.data));
+                })
+                .fail(function (jqXHR, textStatus, msg) {
+                    $("#result").html('The request is fail and return the message: ' + msg);
+                });
+            });
+        </script>
+    </body>
+</html>
